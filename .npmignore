@@ -1,0 +1,6 @@
+src
+*.ts
+*.tsx
+!.d.ts
+.gitignore
+.git
