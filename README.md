@@ -195,7 +195,7 @@ Contributions are welcome! If you have ideas for improvements or find bugs, plea
 
 ### Reporting Issues
 
-If you encounter any issues or have questions, please open an issue on the [GitHub repository](https://github.com/yourusername/react-fb-login-btn/issues).
+If you encounter any issues or have questions, please open an issue on the [GitHub repository](https://github.com/muhmushtaha/react-fb-login-btn/issues).
 
 ---
 
