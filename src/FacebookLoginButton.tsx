@@ -6,7 +6,7 @@ interface Theme {
   hoverBackgroundColor: string;
 }
 
-interface FacebookLoginButtonProps {
+export interface FacebookLoginButtonProps {
   /**
    * The shape of the button. Can be 'rectangular' or 'circle'.
    * @default 'rectangular'

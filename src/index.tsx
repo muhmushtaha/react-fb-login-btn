@@ -1,1 +1,1 @@
-export { default as FacebookLoginButton } from "./FacebookLoginButton";
+export { default as FacebookLoginButton, FacebookLoginButtonProps } from "./FacebookLoginButton";
