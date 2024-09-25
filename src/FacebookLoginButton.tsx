@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import { twMerge } from 'tailwind-merge'
 
 interface Theme {
   backgroundColor: string;
@@ -43,6 +44,11 @@ export interface FacebookLoginButtonProps {
   customTheme?: Partial<Theme>;
 
   /**
+   * Custom class name to apply to the button.
+   */
+  className?: string;
+
+  /**
    * Function to call on successful login.
    */
   onSuccess?: (response: StatusResponse) => void;
@@ -62,6 +68,11 @@ export interface FacebookLoginButtonProps {
    * @default 'public_profile,email'
    */
   scope?: string;
+
+  /**
+   * Custom icon to display on the button.
+   */
+  icon?: React.ReactNode;
 }
 
 export interface AuthResponse {
@@ -108,6 +119,8 @@ const FacebookLoginButton: React.FC<FacebookLoginButtonProps> = ({
   onFail,
   appId,
   scope = "public_profile,email",
+  icon,
+  className = "",
 }) => {
   const [sdkLoaded, setSdkLoaded] = useState(false);
 
@@ -192,17 +205,20 @@ const FacebookLoginButton: React.FC<FacebookLoginButtonProps> = ({
       }
       : defaultThemes[theme];
 
-  const buttonClasses = `
-    flex items-center justify-center
-    ${direction === "rtl" ? "flex-row-reverse" : ""}
-    ${shapeClasses[shape]}
-    ${currentTheme.backgroundColor}
-    ${currentTheme.textColor}
-    font-bold py-2 px-4
-    ${currentTheme.hoverBackgroundColor}
-  `;
+  const buttonClasses = useMemo(() => {
+    return twMerge(
+      "flex items-center justify-center",
+      direction === "rtl" ? "flex-row-reverse" : "",
+      shapeClasses[shape],
+      currentTheme.backgroundColor,
+      currentTheme.textColor,
+      "py-2 px-4",
+      currentTheme.hoverBackgroundColor,
+      className,
+    )
+  }, [shape, theme, className]);
 
-  const icon = (
+  const defaultIcon = (
     <svg
       width="36"
       height="36"
@@ -222,7 +238,7 @@ const FacebookLoginButton: React.FC<FacebookLoginButtonProps> = ({
 
   return (
     <button onClick={handleClick} className={buttonClasses} style={style}>
-      {icon}
+      {icon || defaultIcon}
       {shape !== "circle" && <span className="mx-2">{text}</span>}
     </button>
   );
