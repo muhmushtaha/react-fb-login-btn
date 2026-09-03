@@ -2,6 +2,8 @@
 
 # react-fb-login-btn Component Documentation
 
+> **Archived recommendation:** This package is no longer actively maintained and is not recommended for new projects. Existing installs can keep using `react-fb-login-btn` v1.0.3, but for new work prefer [react-facebook](https://www.npmjs.com/package/react-facebook) or your auth framework's Facebook provider.
+
 A customizable, reusable, and type-safe React component for integrating Facebook login functionality into your applications. The `react-fb-login-btn` component is built with TypeScript and Tailwind CSS, supports theming, different button shapes, left-to-right and right-to-left text directions, and handles Facebook login flow internally using the Facebook SDK.
 
 ## Table of Contents
@@ -130,7 +132,7 @@ Contributions are welcome! If you have ideas for improvements or find bugs, plea
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/yourusername/react-fb-login-btn.git
+   git clone https://github.com/muhmushtaha/react-fb-login-btn.git
    cd react-fb-login-btn
    ```
 
@@ -208,7 +210,3 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 ---
 
 **Note:** By providing a link to your Storybook documentation, users can explore interactive examples and see all the different configurations of your component. This approach keeps your README concise and focused while still offering users access to detailed usage examples.
-
----
-
-**Would you like me to help update any specific parts of the README or assist with setting up the Storybook link?**
